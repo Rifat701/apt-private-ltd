@@ -1,41 +1,44 @@
 // product data { OBJECT }
 let products = [
-    {
-        id: 1,
-        image: 'http://www.pakonagro.com/urun_res/_turkiye-menseli-spaniola-tipi-nohut-9mm1535708874.jpg',
-        title: 'origin red hole'
-    },
-    {
-        id: 2,
-        image: 'http://www.pakonagro.com/urun_res/_turkiye-menseli-futbol-tipi-kirmizi-mercimek1536157556.jpg',
-        title: 'origin red holee'
-    },
-    {
-        id: 3,
-        image: 'http://www.pakonagro.com/urun_res/_turkiye-menseli-kabuklu-kirmizi-mercimek.png',
-        title: 'origin red hole'
-    },
-    {
-        id: 4,
-        image: 'http://www.pakonagro.com/urun_res/_bugday-.jpg',
-        title: 'origin red hole'
-    },
-    {
-        id: 5,
-        image: 'http://www.pakonagro.com/urun_res/_bulgur.jpg',
-        title: 'origin red hole'
-    },
-    {
-        id: 6,
-        image: 'http://www.pakonagro.com/urun_res/_kimyon-.jpg ',
-        title: 'origin red hole'
-    },
+  {
+    id: 1,
+    image:
+      "http://www.pakonagro.com/urun_res/_turkiye-menseli-spaniola-tipi-nohut-9mm1535708874.jpg",
+    title: "origin red hole",
+  },
+  {
+    id: 2,
+    image:
+      "http://www.pakonagro.com/urun_res/_turkiye-menseli-futbol-tipi-kirmizi-mercimek1536157556.jpg",
+    title: "origin red holee",
+  },
+  {
+    id: 3,
+    image:
+      "http://www.pakonagro.com/urun_res/_turkiye-menseli-kabuklu-kirmizi-mercimek.png",
+    title: "origin red hole",
+  },
+  {
+    id: 4,
+    image: "http://www.pakonagro.com/urun_res/_bugday-.jpg",
+    title: "origin red hole",
+  },
+  {
+    id: 5,
+    image: "http://www.pakonagro.com/urun_res/_bulgur.jpg",
+    title: "origin red hole",
+  },
+  {
+    id: 6,
+    image: "http://www.pakonagro.com/urun_res/_kimyon-.jpg ",
+    title: "origin red hole",
+  },
 ];
 
-const product_wrapper = document.querySelector('.product_wrapper');
-const product_overlay = document.querySelector('.product_overlay');
+const product_wrapper = document.querySelector(".product_wrapper");
+const product_overlay = document.querySelector(".product_overlay");
 products.map(({ id, image }) => {
-    product_wrapper.innerHTML += `
+  product_wrapper.innerHTML += `
         <div class="product_content">
             <div class="product_img d-flex justify-content-center align-items-end pb-lg-4 w-100" style="background-image: url('${image}');">
                 <button href="#" id="${id}" class="more_btn px-lg-5 py-lg-2 text-uppercase text-white rounded-pill">
@@ -43,31 +46,31 @@ products.map(({ id, image }) => {
                 </button>
             </div>
             </div>
-            `
+            `;
 });
 
 // Product Overlay
 // dom selector
 // const more_btn = document.querySelectorAll('button');
-const __productOne = document.getElementById('1');
-const __productTwo = document.getElementById('2');
-const __productThree = document.getElementById('3');
-const __productFour = document.getElementById('4');
-const __productFive = document.getElementById('5');
-const __productSix = document.getElementById('6');
-const cross_svg = document.querySelector('.cross_area');
+const __productOne = document.getElementById("1");
+const __productTwo = document.getElementById("2");
+const __productThree = document.getElementById("3");
+const __productFour = document.getElementById("4");
+const __productFive = document.getElementById("5");
+const __productSix = document.getElementById("6");
+const cross_svg = document.querySelector(".cross_area");
 
-__productOne.addEventListener('click', () => {
-    product_overlay.style.display = 'block';
+__productOne.addEventListener("click", () => {
+  product_overlay.style.display = "block";
 });
 // addevent listner
-cross_svg.addEventListener('click', () => {
-    product_overlay.style.display = 'none';
+cross_svg.addEventListener("click", () => {
+  product_overlay.style.display = "none";
 });
 
 const productOne = ({ items }) => {
-    console.log(items[0].title);
-    product_overlay.innerHTML += `
+  console.log(items[0].title);
+  product_overlay.innerHTML += `
         < div class="cross_area position-absolute top-0 end-0 mt-lg-3 me-lg-3" >
             <i class="fas fa-times cross_svg"></i>
     </ >
@@ -111,6 +114,6 @@ const productOne = ({ items }) => {
                 </div>
             </div>
         </div>
-    `
-}
+    `;
+};
 productOne(products);
