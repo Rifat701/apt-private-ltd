@@ -1,5 +1,13 @@
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .product_wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .product_img {
+    height: 150px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
